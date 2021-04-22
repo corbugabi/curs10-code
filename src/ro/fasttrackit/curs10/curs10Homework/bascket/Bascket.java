@@ -1,25 +1,23 @@
-package ro.fasttrackit.curs10.curs10Homework.Bascket;
+package ro.fasttrackit.curs10.curs10Homework.bascket;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Stream;
 
 public class Bascket {
-    private final List<String> fruits = new ArrayList<String>(List.of("mere","pere","alune","mere"));
-    int count = 0;
-    int COUNT = 1;
+    private final List<String> fruits;
+
+    public Bascket(List<String> fruits){
+        this.fruits = fruits;
+    }
+
     public boolean find(String fruit) {
         for (String myFruit : fruits) {
             if (fruit.equals(myFruit)) {
-                System.out.println(fruits);
                 return true;
-            } else {
-                return false;
             }
         }
-        return true;
+        return false;
     }
 
     public boolean removeF(String fruit){
@@ -34,17 +32,18 @@ public class Bascket {
     return true;}
 
     public int position(String fruit){
+        int count = 0;
         for (String myFruit : fruits) {
             if (fruit.equals(myFruit)) {
                 return count;
             }
             count++;
         }
-        return 0;
+        return -1;
     }
 
     public String distinct(){
-       for(String myFruit : fruits);
+       for(int i=0;i<fruits.toArray().length;i++);
         return null;
     }
 
@@ -60,6 +59,7 @@ public class Bascket {
     }
 
     public int customCount(){
+        int COUNT = 1;
         for (int i=1; i<fruits.toArray().length;i++){
             COUNT++;
         }
